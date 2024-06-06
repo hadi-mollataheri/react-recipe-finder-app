@@ -1,7 +1,9 @@
 import Recipe from './Recipe';
 import icon from '../assets/icon-360px.png';
+import {useContext} from 'react';
 
 function Recipes() {
+  
   return (
     <div className='relative top-20'>
       <Recipe />

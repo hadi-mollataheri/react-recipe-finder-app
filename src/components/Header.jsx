@@ -1,5 +1,6 @@
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import icon from '../assets/icon-360px.png';
+import { useContext } from 'react';
 
 function Header() {
   return (
