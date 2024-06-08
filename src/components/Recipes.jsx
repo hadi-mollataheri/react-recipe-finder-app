@@ -1,9 +1,10 @@
 import Recipe from './Recipe';
 import icon from '../assets/icon-360px.png';
-import {useContext} from 'react';
+import { useContext } from 'react';
+import { FetchedDataContext } from '../context/FetchDataContextProvider';
 
 function Recipes() {
-  
+  const { fetchedDataState } = useContext(FetchedDataContext);
   return (
     <div className='relative top-20'>
       <Recipe />

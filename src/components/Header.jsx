@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import {FetchedDataContext} from '../context/FetchDataContextProvider';
 
 function Header() {
-  const { userInput, handleInputChange } = useContext(FetchedDataContext);
+  const { userInput, handleInputChange, handleSearchClick } = useContext(FetchedDataContext);
 
   return (
     <div className='bg-slate-900 text-white py-4 fixed top-0 h-20 flex items-center w-full z-10'>
@@ -23,7 +23,7 @@ function Header() {
             placeholder='Search Recipe'
             className=' border-2 border-black pl-9 pr-1 pb-2 pt-1 sm:pb-3 sm:pt-2 leading-none w-full rounded-md text-black'
           />
-          <button className='absolute left-2 pt-0.5'>
+          <button onClick={handleSearchClick} className='absolute left-2 pt-0.5'>
             <MagnifyingGlass size={23} color='#6c6565' />
           </button>
         </div>
