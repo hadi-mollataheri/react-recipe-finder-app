@@ -8,6 +8,10 @@ function FetchDataContextProvider({ children }) {
   const [fetchedDate, setFetchedData] = useState(null);
   const [userInput, setUserInput] = useState('');
 
+  const handleInputChange = ({ target }) => {
+    setUserInput(target.value);
+  };
+
   useEffect(() => {
     setFetchedData(() => {
       if (userInput) {
@@ -18,7 +22,7 @@ function FetchDataContextProvider({ children }) {
 
   return (
     <FetchedDataContext.Provider
-      value={{ fetchedDate, userInput, setUserInput }}
+      value={{ fetchedDate, userInput, handleInputChange }}
     >
       {children}
     </FetchedDataContext.Provider>
