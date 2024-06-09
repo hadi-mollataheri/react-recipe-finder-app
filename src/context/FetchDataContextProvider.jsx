@@ -5,6 +5,7 @@ import { fetchData } from '../utilities/edamamAPI';
 export const FetchedDataContext = createContext();
 
 function FetchDataContextProvider({ children }) {
+  
   const [fetchedDataState, setFetchedDataState] = useState(null); // fetchedDataState.hits[0].recipe.'label' or '...'
   const [userInput, setUserInput] = useState('');
   // /*  TEST */ console.log(fetchedDataState);
