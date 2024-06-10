@@ -7,7 +7,7 @@ function Header() {
   const { userInput, handleInputChange, handleSearchClick } = useContext(FetchedDataContext);
 
   return (
-    <div className='bg-slate-900 text-white py-4 fixed top-0 h-20 flex items-center w-full z-10'>
+    <div className='bg-slate-900 text-white py-4 fixed top-0 h-20 flex items-center w-full z-20'>
       <header className='flex justify-start items-center mx-3 w-full'>
         <div id='logo' className='flex items-center mr-2 w-full'>
           <img src={icon} alt='burger' width={34} />

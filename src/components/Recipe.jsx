@@ -1,18 +1,44 @@
 /* eslint-disable react/prop-types */
+import { useContext } from 'react';
+import { FetchedDataContext } from '../context/FetchDataContextProvider';
+import Ingredients from './Ingredients';
 
 function Recipe({ recipe }) {
+  const { isIngredientsVisible, handleShowIngredientsClick } =
+    useContext(FetchedDataContext);
+
   return (
     recipe && (
       <div className='flex flex-col items-center justify-center rounded-lg shadow-[0_0_3px_rgba(0,0,0,0.4)] w-[90%]'>
-        <h2 className='text-center align-middle bg-black w-full rounded-tl-md rounded-tr-md pb-2 pt-1 px-1 text-white'>{recipe.label}</h2>
-        <div id='img-container' className='max-w-full'>
-          <img src={recipe.image} alt={recipe.label} className='object-contain p-5 h-auto' />
-        </div>
-        <div id='ingredients'></div>
-        <div id='complete-recipe-link'>
-          <button>
-            <a href={recipe.url} target="_blank">See Complete Recipe</a>
-          </button>
+        <h2 className='text-center align-middle bg-black w-full rounded-tl-lg rounded-tr-lg pb-3 pt-2 px-1 text-white font-semibold'>
+          {recipe.label}
+        </h2>
+        <div id='content' className='p-5'>
+          <div id='img-container' className='max-w-full'>
+            <img
+              src={recipe.image}
+              alt={recipe.label}
+              className='mb-5 h-auto border rounded'
+            />
+          </div>
+          <div id='info' className='flex flex-col space-y-5 w-full relative'>
+            <button
+              id='ingredients'
+              onClick={handleShowIngredientsClick}
+              className='bg-green-600 pb-3 pt-2 text-white font-semibold rounded'
+            >
+              Ingredients
+            </button>
+            <button
+              id='full-recipe'
+              className='bg-[#9B3B8B] pb-3 pt-2 text-white font-semibold rounded'
+            >
+              <a href={recipe.url} target='_blank'>
+                See Complete Recipe
+              </a>
+            </button>
+          </div>
+          {isIngredientsVisible ? <Ingredients recipe={recipe} /> : null}
         </div>
       </div>
     )
