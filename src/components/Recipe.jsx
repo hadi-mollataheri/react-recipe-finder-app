@@ -3,7 +3,8 @@ import { useContext } from 'react';
 import { FetchedDataContext } from '../context/FetchDataContextProvider';
 import Ingredients from './Ingredients';
 
-function Recipe({ recipe }) {
+function Recipe({ recipe, index }) {
+
   const { isIngredientsVisible, handleShowIngredientsClick } =
     useContext(FetchedDataContext);
 
@@ -24,7 +25,7 @@ function Recipe({ recipe }) {
           <div id='info' className='flex flex-col space-y-5 w-full relative'>
             <button
               id='ingredients'
-              onClick={handleShowIngredientsClick}
+              onClick={() => handleShowIngredientsClick(index)}
               className='bg-green-600 pb-3 pt-2 text-white font-semibold rounded'
             >
               Ingredients
@@ -38,7 +39,7 @@ function Recipe({ recipe }) {
               </a>
             </button>
           </div>
-          {isIngredientsVisible ? <Ingredients recipe={recipe} /> : null}
+          {isIngredientsVisible[index] ? <Ingredients recipe={recipe} /> : null}
         </div>
       </div>
     )

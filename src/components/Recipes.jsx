@@ -22,7 +22,7 @@ function Recipes() {
               key={index + 1}
               className='grid grid-cols-1 justify-items-center items-center pb-10'
             >
-              <Recipe recipe={currentRecipe.recipe} />
+              <Recipe recipe={currentRecipe.recipe} index={index} />
             </div>
           );
         })
