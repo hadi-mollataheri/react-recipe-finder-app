@@ -23,9 +23,6 @@ function FetchDataContextProvider({ children }) {
     setIsIngredientsVisible(getDefaultIngsVisibility() || []);
   }, [fetchedDataState]);
 
-  // console.log(isIngredientsVisible);
-
-  // /*  TEST */ console.log(fetchedDataState);
   const handleInputChange = ({ target }) => {
     setUserInput(target.value);
   };
@@ -41,7 +38,21 @@ function FetchDataContextProvider({ children }) {
   const handleShowIngredientsClick = (index) => {
     isIngredientsVisible.map((_, currentIndex) => {
       if (currentIndex === index) {
-        setIsIngredientsVisible((prev) => [...prev, prev[currentIndex] = true]);
+        setIsIngredientsVisible((prev) => [
+          ...prev,
+          (prev[currentIndex] = true),
+        ]);
+      }
+    });
+  };
+
+  const handleCloseIngsButton = (index) => {
+    isIngredientsVisible.map((_, currentIndex) => {
+      if (currentIndex === index) {
+        setIsIngredientsVisible((prev) => [
+          ...prev,
+          (prev[currentIndex] = false),
+        ]);
       }
     });
   };
@@ -55,6 +66,7 @@ function FetchDataContextProvider({ children }) {
         handleSearchClick,
         isIngredientsVisible,
         handleShowIngredientsClick,
+        handleCloseIngsButton,
       }}
     >
       {children}

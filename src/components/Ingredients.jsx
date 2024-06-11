@@ -1,5 +1,10 @@
 /* eslint-disable react/prop-types */
-function Ingredients({ recipe }) {
+import { useContext } from 'react';
+import { FetchedDataContext } from '../context/FetchDataContextProvider';
+
+function Ingredients({ recipe, index }) {
+  const { handleCloseIngsButton } = useContext(FetchedDataContext);
+
   return (
     <div className='bg-[#463242] text-white p-2 absolute top-40 z-10 rounded-md'>
       <table>
@@ -31,7 +36,7 @@ function Ingredients({ recipe }) {
           </tr>
         </tfoot>
       </table>
-      <button>Close</button>
+      <button onClick={() => handleCloseIngsButton(index)}>Close</button>
     </div>
   );
 }

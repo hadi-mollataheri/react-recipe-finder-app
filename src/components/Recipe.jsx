@@ -39,7 +39,7 @@ function Recipe({ recipe, index }) {
               </a>
             </button>
           </div>
-          {isIngredientsVisible[index] ? <Ingredients recipe={recipe} /> : null}
+          {isIngredientsVisible[index] ? <Ingredients recipe={recipe} index={index} /> : null}
         </div>
       </div>
     )
