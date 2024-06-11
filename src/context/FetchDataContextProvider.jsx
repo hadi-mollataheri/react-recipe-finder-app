@@ -21,6 +21,7 @@ function FetchDataContextProvider({ children }) {
 
   useEffect(() => {
     setIsIngredientsVisible(getDefaultIngsVisibility() || []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchedDataState]);
 
   const handleInputChange = ({ target }) => {
