@@ -48,7 +48,7 @@ function Ingredients({ recipe, index }) {
         </table>
         <button
           onClick={() => handleCloseIngsButton(index)}
-          className='mx-auto w-full'
+          className='flex justify-center items-start mx-auto bg-red-600 my-3 text-white rounded-md pt-1 pb-2 px-3'
         >
           Close
         </button>
