@@ -7,7 +7,7 @@ function Recipes() {
   const { fetchedDataState } = useContext(FetchedDataContext);
 
   return (
-    <div className='relative top-20 my-10 mx-7'>
+    <div id='recipes-container' className='relative top-20 my-10 mx-7'>
       {/* If search button is not clicked */}
       {!fetchedDataState ? (
         <img src={icon} alt='burger' width={200} className='opacity-50 mx-auto' />
@@ -20,7 +20,7 @@ function Recipes() {
           return (
             <div
               key={index + 1}
-              className='grid grid-cols-1 justify-items-center items-center pb-10'
+              className='grid grid-cols-1 justify-items-center items-center pb-10 h-auto'
             >
               <Recipe recipe={currentRecipe.recipe} index={index} />
             </div>

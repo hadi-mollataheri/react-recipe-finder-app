@@ -10,12 +10,12 @@ function Recipe({ recipe, index }) {
 
   return (
     recipe && (
-      <div className='flex flex-col items-center justify-center rounded-lg shadow-[0_0_3px_rgba(0,0,0,0.4)] w-[90%]'>
+      <div className='flex flex-col items-center justify-center rounded-lg shadow-[0_0_3px_rgba(0,0,0,0.4)] w-[90%] h-auto'>
         <h2 className='text-center align-middle bg-black w-full rounded-tl-lg rounded-tr-lg pb-3 pt-2 px-1 text-white font-semibold'>
           {recipe.label}
         </h2>
         <div id='content' className='p-5'>
-          <div id='img-container' className='max-w-full'>
+          <div id='img-container' className='max-w-full flex justify-center'>
             <img
               src={recipe.image}
               alt={recipe.label}

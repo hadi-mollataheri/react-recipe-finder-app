@@ -1,8 +1,10 @@
 import Header from './components/Header';
 import Recipes from './components/Recipes';
-import FetchDataContextProvider from './context/FetchDataContextProvider.jsx';
+import FetchDataContextProvider from './context/FetchDataContextProvider';
 
 function App() {
+
+
   return (
     <div id='app-container'>
       <FetchDataContextProvider>
