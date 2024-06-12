@@ -6,10 +6,9 @@ function Ingredients({ recipe, index }) {
   const { handleCloseIngsButton } = useContext(FetchedDataContext);
 
   return (
-    // id=ingredients-bg is positioned relative to the id=recipes-container
-    <div id='ingredients-container' className='sticky mt-5 w-full h-full rounded-md'>
-      <div className='bg-[#6B0FE0] p-2 rounded-md'>
-        <table className='border-separate w-[90%] mx-auto table-fixed'>
+    <div id='ingredients-container' className='mt-5 w-full h-full rounded-md lg:absolute lg:-top-20 lg:z-10 lg:left-1/2 lg:rounded-none lg:-translate-x-1/2 lg:bg-slate-900 lg:bg-opacity-40'>
+      <div id='bg-container' className='bg-[#6B0FE0] p-2 rounded-md lg:w-1/2 lg:mx-auto lg:mt-28'>
+        <table className='border-separate w-[90%] mx-auto table-fixed lg:text-lg'>
           <caption className='caption-top my-3 font-bold text-white'>
             {recipe.label}
           </caption>
@@ -40,7 +39,7 @@ function Ingredients({ recipe, index }) {
               <th scope='row' className='bg-[#E0953F] w-2/3 mx-auto'>
                 Calories
               </th>
-              <td className='bg-[#3A8B5F] text-center'>
+              <td className='bg-[#3A8B5F] text-center font-semibold'>
                 {Math.round(recipe.calories)}
               </td>
             </tr>
@@ -48,7 +47,7 @@ function Ingredients({ recipe, index }) {
         </table>
         <button
           onClick={() => handleCloseIngsButton(index)}
-          className='flex justify-center items-start mx-auto bg-red-600 my-3 text-white rounded-md pt-1 pb-2 px-3'
+          className='flex justify-center items-start mx-auto bg-red-600 mt-5 mb-4 text-white rounded-md pt-1 pb-2 px-3 sm:px-6 lg:px-10 lg:pt-2 lg:pb-3'
         >
           Close
         </button>

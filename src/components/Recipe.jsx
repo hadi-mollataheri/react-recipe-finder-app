@@ -10,8 +10,8 @@ function Recipe({ recipe, index }) {
   return (
     recipe && (
       <div className='flex flex-col items-center justify-center rounded-lg shadow-[0_0_3px_rgba(0,0,0,0.4)] w-[90%] sm:w-full'>
-        <div className='bg-black w-full rounded-tl-lg rounded-tr-lg'>
-          <h2 className='text-center align-middle  pb-3 pt-2 px-1 text-white font-semibold sm:h-20 sm:m-[1px] sm:p-[1px] sm:flex sm:items-center sm:justify-center'>
+        <div id='recipe-name-container' className='bg-black w-full rounded-tl-lg rounded-tr-lg px-[1px]'>
+          <h2 className='text-center align-middle  pb-3 pt-2 px-1 text-white font-semibold sm:min-h-20 sm:m-[1px] sm:p-[1px] sm:flex sm:items-center sm:justify-center'>
             {recipe.label}
           </h2>
         </div>
@@ -26,7 +26,7 @@ function Recipe({ recipe, index }) {
           </div>
           <div
             id='info'
-            className='flex flex-col space-y-5 sm:space-y-2 w-full relative'
+            className='flex flex-col space-y-5 sm:space-y-2 w-full'
           >
             <button
               id='ingredients'

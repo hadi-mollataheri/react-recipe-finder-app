@@ -10,8 +10,8 @@ function Header() {
     <div className='bg-slate-900 text-white py-4 fixed top-0 h-20 flex items-center w-full z-20'>
       <header className='flex justify-start items-center mx-3 w-full'>
         <div id='logo' className='flex items-center mr-2 w-full'>
-          <img src={icon} alt='burger' width={34} className='sm:w-11' />
-          <p className='ml-2 sm:text-lg font-semibold'>Hadi&apos;s Recipe Finder</p>
+          <img src={icon} alt='burger' width={34} className='sm:w-11 md:w-12' />
+          <p className='ml-2 sm:text-lg md:text-2xl font-semibold'>Hadi&apos;s Recipe Finder</p>
         </div>
 
         <div id='searchBox' className='flex items-center relative w-full'>
