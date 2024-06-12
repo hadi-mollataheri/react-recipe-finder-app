@@ -4,25 +4,30 @@ import { FetchedDataContext } from '../context/FetchDataContextProvider';
 import Ingredients from './Ingredients';
 
 function Recipe({ recipe, index }) {
-
   const { isIngredientsVisible, handleShowIngredientsClick } =
     useContext(FetchedDataContext);
 
   return (
     recipe && (
-      <div className='flex flex-col items-center justify-center rounded-lg shadow-[0_0_3px_rgba(0,0,0,0.4)] w-[90%] h-auto'>
-        <h2 className='text-center align-middle bg-black w-full rounded-tl-lg rounded-tr-lg pb-3 pt-2 px-1 text-white font-semibold'>
-          {recipe.label}
-        </h2>
-        <div id='content' className='p-5'>
+      <div className='flex flex-col items-center justify-center rounded-lg shadow-[0_0_3px_rgba(0,0,0,0.4)] w-[90%] sm:w-full'>
+        <div className='bg-black w-full rounded-tl-lg rounded-tr-lg'>
+          <h2 className='text-center align-middle  pb-3 pt-2 px-1 text-white font-semibold sm:h-20 sm:m-[1px] sm:p-[1px] sm:flex sm:items-center sm:justify-center'>
+            {recipe.label}
+          </h2>
+        </div>
+
+        <div id='content' className='p-5 sm:p-2 sm:h-full'>
           <div id='img-container' className='max-w-full flex justify-center'>
             <img
               src={recipe.image}
               alt={recipe.label}
-              className='mb-5 h-auto border rounded'
+              className='mb-5 sm:mb-2 w-full h-auto border rounded'
             />
           </div>
-          <div id='info' className='flex flex-col space-y-5 w-full relative'>
+          <div
+            id='info'
+            className='flex flex-col space-y-5 sm:space-y-2 w-full relative'
+          >
             <button
               id='ingredients'
               onClick={() => handleShowIngredientsClick(index)}
@@ -39,7 +44,9 @@ function Recipe({ recipe, index }) {
               </a>
             </button>
           </div>
-          {isIngredientsVisible[index] ? <Ingredients recipe={recipe} index={index} /> : null}
+          {isIngredientsVisible[index] ? (
+            <Ingredients recipe={recipe} index={index} />
+          ) : null}
         </div>
       </div>
     )
