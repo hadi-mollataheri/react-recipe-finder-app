@@ -14,7 +14,7 @@ const app_key = 'd4af71c6fdc489fbc6132a2a4d72b3d7'
 const getUrl = (query) => {
   const endpoint = `q=${query}&app_id=${app_id}&app_key=${app_key}`;
   const url = `${baseUrl}${endpoint}`;
-  // console.log(url);
+  console.log(url);
   return url;
 };
 export const fetchData = async (query) => {

@@ -39,14 +39,14 @@ function Ingredients({ recipe, index }) {
                 Calories
               </th>
               <td className='bg-[#3A8B5F] text-center font-semibold'>
-                {Math.round(recipe.calories)}
+                {`${Math.round(recipe.calories)} kcal`}
               </td>
             </tr>
           </tfoot>
         </table>
         <button
           onClick={() => handleCloseIngsButton(index)}
-          className='flex justify-center items-start mx-auto bg-red-600 mt-5 mb-4 text-white rounded-md pt-1 pb-2 px-3 sm:px-6 lg:px-10 lg:pt-2 lg:pb-3'
+          className='flex justify-center items-start mx-auto bg-red-600 mt-5 mb-4 text-white rounded-md py-2 sm:pt-1 sm:pb-2 px-4 sm:px-6 lg:px-10 lg:pt-2 lg:pb-3'
         >
           Close
         </button>

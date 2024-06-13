@@ -21,7 +21,7 @@ function Header() {
             onChange={handleInputChange}
             aria-label='search box'
             placeholder='Search Recipe'
-            className=' border-2 border-black pl-9 pr-1 pb-2 pt-1 sm:pb-3 sm:pt-2 leading-none w-full rounded-md text-black'
+            className=' border-2 border-black pl-9 pr-1 py-2 sm:pb-3 sm:pt-2 leading-none w-full rounded-md text-black'
           />
           <button onClick={handleSearchClick} className='absolute left-2 pt-0.5'>
             <MagnifyingGlass size={23} color='#6c6565' />

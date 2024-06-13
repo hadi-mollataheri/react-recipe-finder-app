@@ -21,23 +21,23 @@ function Recipe({ recipe, index }) {
             <img
               src={recipe.image}
               alt={recipe.label}
-              className='mb-5 sm:mb-2 w-full h-auto border rounded'
+              className='mb-5 sm:mb-2 sm:w-64 w-full h-auto border rounded'
             />
           </div>
           <div
             id='info'
-            className='flex flex-col space-y-5 sm:space-y-2 w-full'
+            className='flex flex-col space-y-5 sm:space-y-2'
           >
             <button
               id='ingredients'
               onClick={() => handleShowIngredientsClick(index)}
-              className='bg-green-600 pb-3 pt-2 text-white font-semibold rounded'
+              className='bg-green-600 sm:w-64 lg:w-auto sm:mx-auto lg:mx-0 py-2 sm:pb-3 sm:pt-2 text-white font-semibold rounded'
             >
               Ingredients
             </button>
             <button
               id='full-recipe'
-              className='bg-[#9B3B8B] pb-3 pt-2 text-white font-semibold rounded'
+              className='bg-[#9B3B8B] sm:w-64 lg:w-auto sm:mx-auto lg:mx-0 py-2 sm:pb-3 sm:pt-2 text-white font-semibold rounded'
             >
               <a href={recipe.url} target='_blank'>
                 See Complete Recipe
