@@ -6,7 +6,7 @@ import Ingredients from './Ingredients';
 function Recipe({ recipe, index }) {
   const { isIngredientsVisible, handleShowIngredientsClick } =
     useContext(FetchedDataContext);
-
+  // console.log(recipe.label); 
   return (
     recipe && (
       <div className='flex flex-col items-center justify-center rounded-lg shadow-[0_0_3px_rgba(0,0,0,0.4)] w-[90%] sm:w-full'>

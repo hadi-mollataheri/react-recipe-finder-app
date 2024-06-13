@@ -18,7 +18,7 @@ function FetchDataContextProvider({ children }) {
   const [isIngredientsVisible, setIsIngredientsVisible] = useState(
     getDefaultIngsVisibility() || []
   );
-          console.log(isIngredientsVisible);
+  console.log(isIngredientsVisible);
 
   useEffect(() => {
     setIsIngredientsVisible(getDefaultIngsVisibility() || []);
@@ -38,25 +38,15 @@ function FetchDataContextProvider({ children }) {
   };
 
   const handleShowIngredientsClick = (index) => {
-    isIngredientsVisible.map((_, currentIndex) => {
-      if (currentIndex === index) {
-        setIsIngredientsVisible((prev) => [
-          ...prev,
-          (prev[currentIndex] = true),
-        ]);
-      }
-    });
+    let updatedIsIngredientsVisible = [...isIngredientsVisible];
+    updatedIsIngredientsVisible[index] = true;
+    setIsIngredientsVisible(updatedIsIngredientsVisible);
   };
 
   const handleCloseIngsButton = (index) => {
-    isIngredientsVisible.map((_, currentIndex) => {
-      if (currentIndex === index) {
-        setIsIngredientsVisible((prev) => [
-          ...prev,
-          (prev[currentIndex] = false),
-        ]);
-      }
-    });
+    let updatedIsIngredientsVisible = [...isIngredientsVisible];
+    updatedIsIngredientsVisible[index] = false;
+    setIsIngredientsVisible(updatedIsIngredientsVisible);
   };
 
   return (

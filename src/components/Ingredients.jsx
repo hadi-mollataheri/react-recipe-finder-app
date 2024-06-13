@@ -4,7 +4,6 @@ import { FetchedDataContext } from '../context/FetchDataContextProvider';
 
 function Ingredients({ recipe, index }) {
   const { handleCloseIngsButton } = useContext(FetchedDataContext);
-
   return (
     <div id='ingredients-container' className='mt-5 w-full h-full rounded-md lg:absolute lg:-top-20 lg:z-10 lg:left-1/2 lg:rounded-none lg:-translate-x-1/2 lg:bg-slate-900 lg:bg-opacity-40'>
       <div id='bg-container' className='bg-[#6B0FE0] p-2 rounded-md lg:w-1/2 lg:mx-auto lg:mt-28'>
