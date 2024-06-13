@@ -18,6 +18,7 @@ function FetchDataContextProvider({ children }) {
   const [isIngredientsVisible, setIsIngredientsVisible] = useState(
     getDefaultIngsVisibility() || []
   );
+        console.log(isIngredientsVisible);
 
   useEffect(() => {
     setIsIngredientsVisible(getDefaultIngsVisibility() || []);
@@ -32,7 +33,6 @@ function FetchDataContextProvider({ children }) {
     fetchData(userInput).then((data) => {
       if (userInput) {
         setFetchedDataState(data);
-              console.log(data.hits[0].recipe.ingredients);
       }
     });
   };
