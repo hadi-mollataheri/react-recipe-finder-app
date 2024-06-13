@@ -18,7 +18,7 @@ function FetchDataContextProvider({ children }) {
   const [isIngredientsVisible, setIsIngredientsVisible] = useState(
     getDefaultIngsVisibility() || []
   );
-        console.log(isIngredientsVisible);
+          console.log(isIngredientsVisible);
 
   useEffect(() => {
     setIsIngredientsVisible(getDefaultIngsVisibility() || []);
